@@ -1,0 +1,11 @@
+C:\Users\00282102\AppData\Local\Temporary Projects\vb2project2\bin\Debug\vb2project2.exe.config
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\bin\Debug\vb2project2.exe.config
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\bin\Debug\vb2project2.exe
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\bin\Debug\vb2project2.pdb
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\bin\Debug\vb2project2.xml
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.Form1.resources
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.Resources.resources
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.vbproj.GenerateResource.Cache
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.exe
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.xml
+C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.pdb
