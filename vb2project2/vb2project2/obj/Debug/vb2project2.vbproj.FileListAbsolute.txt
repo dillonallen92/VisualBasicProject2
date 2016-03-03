@@ -13,3 +13,14 @@ C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2projec
 C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.exe
 C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.xml
 C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.pdb
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\bin\Debug\vb2project2.exe.config
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.exe
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.xml
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.pdb
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\bin\Debug\vb2project2.exe
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\bin\Debug\vb2project2.pdb
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\bin\Debug\vb2project2.xml
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.vbprojResolveAssemblyReference.cache
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.Form1.resources
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.Resources.resources
+C:\Users\Owner\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.vbproj.GenerateResource.Cache
