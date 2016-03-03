@@ -11,7 +11,7 @@ Public Class Form1
 
     Public Class Enemy
         Inherits Ship
-
+        Private _speed As Double = 20.0
     End Class
 
 End Class

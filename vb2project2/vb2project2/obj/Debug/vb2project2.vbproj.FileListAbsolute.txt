@@ -9,3 +9,7 @@ C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\
 C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.exe
 C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.xml
 C:\Users\00282102\Documents\Visual Studio 2012\Projects\vb2project2\vb2project2\obj\Debug\vb2project2.pdb
+C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\bin\Debug\vb2project2.exe.config
+C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.exe
+C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.xml
+C:\Users\Dillon Allen\Documents\GitHub\VisualBasicProject2\vb2project2\vb2project2\obj\Debug\vb2project2.pdb
