@@ -22,18 +22,20 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.picPlayer = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.picEn = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.StartGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.prbHealth = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.tmrBullet = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picEn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,15 +50,15 @@ Partial Class Form1
         Me.picPlayer.TabIndex = 0
         Me.picPlayer.TabStop = False
         '
-        'PictureBox2
+        'picEn
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(889, 341)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
+        Me.picEn.Image = CType(resources.GetObject("picEn.Image"), System.Drawing.Image)
+        Me.picEn.Location = New System.Drawing.Point(889, 341)
+        Me.picEn.Name = "picEn"
+        Me.picEn.Size = New System.Drawing.Size(100, 50)
+        Me.picEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picEn.TabIndex = 1
+        Me.picEn.TabStop = False
         '
         'MenuStrip1
         '
@@ -93,14 +95,15 @@ Partial Class Form1
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
-        'ProgressBar1
+        'prbHealth
         '
-        Me.ProgressBar1.BackColor = System.Drawing.SystemColors.Control
-        Me.ProgressBar1.Location = New System.Drawing.Point(12, 44)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ProgressBar1.Size = New System.Drawing.Size(100, 23)
-        Me.ProgressBar1.TabIndex = 0
+        Me.prbHealth.BackColor = System.Drawing.SystemColors.Control
+        Me.prbHealth.Location = New System.Drawing.Point(12, 44)
+        Me.prbHealth.Name = "prbHealth"
+        Me.prbHealth.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.prbHealth.Size = New System.Drawing.Size(100, 23)
+        Me.prbHealth.TabIndex = 0
+        Me.prbHealth.Value = 100
         '
         'Label1
         '
@@ -113,6 +116,10 @@ Partial Class Form1
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Health"
         '
+        'tmrBullet
+        '
+        Me.tmrBullet.Interval = 1000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -120,15 +127,15 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1141, 646)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ProgressBar1)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.prbHealth)
+        Me.Controls.Add(Me.picEn)
         Me.Controls.Add(Me.picPlayer)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -136,13 +143,13 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents picPlayer As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents picEn As System.Windows.Forms.PictureBox
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents StartGameToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InstructionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
+    Friend WithEvents prbHealth As System.Windows.Forms.ProgressBar
     Friend WithEvents Label1 As System.Windows.Forms.Label
-
+    Friend WithEvents tmrBullet As Timer
 End Class
