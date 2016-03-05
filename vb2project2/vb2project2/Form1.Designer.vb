@@ -34,6 +34,8 @@ Partial Class Form1
         Me.prbHealth = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tmrBullet = New System.Windows.Forms.Timer(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -125,12 +127,36 @@ Partial Class Form1
         '
         Me.tmrBullet.Interval = 1000
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label2.Location = New System.Drawing.Point(1459, 34)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 17)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Health"
+        '
+        'ProgressBar2
+        '
+        Me.ProgressBar2.BackColor = System.Drawing.SystemColors.Control
+        Me.ProgressBar2.Location = New System.Drawing.Point(1375, 54)
+        Me.ProgressBar2.Margin = New System.Windows.Forms.Padding(4)
+        Me.ProgressBar2.Name = "ProgressBar2"
+        Me.ProgressBar2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ProgressBar2.Size = New System.Drawing.Size(133, 28)
+        Me.ProgressBar2.TabIndex = 6
+        Me.ProgressBar2.Value = 100
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1521, 795)
+        Me.Controls.Add(Me.ProgressBar2)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.prbHealth)
         Me.Controls.Add(Me.picEn)
@@ -139,7 +165,7 @@ Partial Class Form1
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
-        Me.Text = "ssssssss"
+        Me.Text = "EbolaKiller"
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -158,4 +184,6 @@ Partial Class Form1
     Friend WithEvents prbHealth As System.Windows.Forms.ProgressBar
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents tmrBullet As Timer
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ProgressBar2 As System.Windows.Forms.ProgressBar
 End Class
