@@ -62,7 +62,19 @@ Public Class Form1
                     picPlayer.Location = Loc
                 End If
 
+            Case Keys.W
+                If Not picPlayer.Location.Y - 5 < 70 Then
+                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 5)
+                    picPlayer.Location = Loc
+                End If
+
             Case Keys.Down
+                If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
+                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 5)
+                    picPlayer.Location = Loc
+                End If
+
+            Case Keys.S
                 If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
                     Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 5)
                     picPlayer.Location = Loc
@@ -73,11 +85,25 @@ Public Class Form1
                     Loc = New Point(picPlayer.Location.X - 5, picPlayer.Location.Y)
                     picPlayer.Location = Loc
                 End If
+
+            Case Keys.A
+                If Not picPlayer.Location.X - 5 < 0 Then
+                    Loc = New Point(picPlayer.Location.X - 5, picPlayer.Location.Y)
+                    picPlayer.Location = Loc
+                End If
+
             Case Keys.Right
                 If Not picPlayer.Location.X - 5 > Me.Width - picPlayer.Width - 5 Then
                     Loc = New Point(picPlayer.Location.X + 5, picPlayer.Location.Y)
                     picPlayer.Location = Loc
                 End If
+
+            Case Keys.D
+                If Not picPlayer.Location.X - 5 > Me.Width - picPlayer.Width - 5 Then
+                    Loc = New Point(picPlayer.Location.X + 5, picPlayer.Location.Y)
+                    picPlayer.Location = Loc
+                End If
+
             Case Keys.Space
                 tmrBullet.Enabled = True
                 Dim b As New Bullet(picPlayer.Location.X, picPlayer.Location.Y)
