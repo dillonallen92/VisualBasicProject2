@@ -57,9 +57,9 @@ Public Class Form1
         Dim Loc As Point
         Select Case e.KeyCode
             Case Keys.Up
-                If Not picPlayer.Location.Y - 5 < 70 Then
-                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 5)
-                    picPlayer.Location = Loc
+                If Not picEn.Location.Y - 5 < 70 Then
+                    Loc = New Point(picEn.Location.X, picEn.Location.Y - 5)
+                    picEn.Location = Loc
                 End If
 
             Case Keys.W
@@ -69,9 +69,9 @@ Public Class Form1
                 End If
 
             Case Keys.Down
-                If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
-                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 5)
-                    picPlayer.Location = Loc
+                If Not picEn.Location.Y - 5 > Me.Height - picEn.Height * 1.6 Then
+                    Loc = New Point(picEn.Location.X, picEn.Location.Y + 5)
+                    picEn.Location = Loc
                 End If
 
             Case Keys.S
@@ -81,9 +81,9 @@ Public Class Form1
                 End If
 
             Case Keys.Left
-                If Not picPlayer.Location.X - 5 < 0 Then
-                    Loc = New Point(picPlayer.Location.X - 5, picPlayer.Location.Y)
-                    picPlayer.Location = Loc
+                If Not picEn.Location.X - 5 < 0 Then
+                    Loc = New Point(picEn.Location.X - 5, picEn.Location.Y)
+                    picEn.Location = Loc
                 End If
 
             Case Keys.A
@@ -93,9 +93,9 @@ Public Class Form1
                 End If
 
             Case Keys.Right
-                If Not picPlayer.Location.X - 5 > Me.Width - picPlayer.Width - 5 Then
-                    Loc = New Point(picPlayer.Location.X + 5, picPlayer.Location.Y)
-                    picPlayer.Location = Loc
+                If Not picEn.Location.X - 5 > Me.Width - picEn.Width - 5 Then
+                    Loc = New Point(picEn.Location.X + 5, picEn.Location.Y)
+                    picEn.Location = Loc
                 End If
 
             Case Keys.D

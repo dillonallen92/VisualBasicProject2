@@ -43,7 +43,8 @@ Partial Class Form1
         '
         Me.picPlayer.Image = CType(resources.GetObject("picPlayer.Image"), System.Drawing.Image)
         Me.picPlayer.InitialImage = CType(resources.GetObject("picPlayer.InitialImage"), System.Drawing.Image)
-        Me.picPlayer.Location = New System.Drawing.Point(90, 247)
+        Me.picPlayer.Location = New System.Drawing.Point(120, 304)
+        Me.picPlayer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.picPlayer.Name = "picPlayer"
         Me.picPlayer.Size = New System.Drawing.Size(100, 50)
         Me.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -53,7 +54,8 @@ Partial Class Form1
         'picEn
         '
         Me.picEn.Image = CType(resources.GetObject("picEn.Image"), System.Drawing.Image)
-        Me.picEn.Location = New System.Drawing.Point(889, 341)
+        Me.picEn.Location = New System.Drawing.Point(1185, 420)
+        Me.picEn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.picEn.Name = "picEn"
         Me.picEn.Size = New System.Drawing.Size(100, 50)
         Me.picEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -66,42 +68,44 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1141, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1521, 28)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'StartGameToolStripMenuItem
         '
         Me.StartGameToolStripMenuItem.Name = "StartGameToolStripMenuItem"
-        Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
+        Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(95, 24)
         Me.StartGameToolStripMenuItem.Text = "Start Game"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InstructionsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(53, 24)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'InstructionsToolStripMenuItem
         '
         Me.InstructionsToolStripMenuItem.Name = "InstructionsToolStripMenuItem"
-        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
         Me.InstructionsToolStripMenuItem.Text = "Instructions"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'prbHealth
         '
         Me.prbHealth.BackColor = System.Drawing.SystemColors.Control
-        Me.prbHealth.Location = New System.Drawing.Point(12, 44)
+        Me.prbHealth.Location = New System.Drawing.Point(16, 54)
+        Me.prbHealth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.prbHealth.Name = "prbHealth"
         Me.prbHealth.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.prbHealth.Size = New System.Drawing.Size(100, 23)
+        Me.prbHealth.Size = New System.Drawing.Size(133, 28)
         Me.prbHealth.TabIndex = 0
         Me.prbHealth.Value = 100
         '
@@ -110,9 +114,10 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.Desktop
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(12, 28)
+        Me.Label1.Location = New System.Drawing.Point(16, 34)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.Size = New System.Drawing.Size(49, 17)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Health"
         '
@@ -122,18 +127,19 @@ Partial Class Form1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1141, 646)
+        Me.ClientSize = New System.Drawing.Size(1521, 795)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.prbHealth)
         Me.Controls.Add(Me.picEn)
         Me.Controls.Add(Me.picPlayer)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "ssssssss"
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
