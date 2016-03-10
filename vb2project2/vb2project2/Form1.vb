@@ -127,15 +127,7 @@ Public Class Form1
                 If intCount = 5 Then
                     intCount = 0
                 End If
-                If Bullets(intCount).Bounds.IntersectsWith(picEn.Bounds) Then 'May need to be moved later
-                    'picEn.SetBounds(100, Me.Width - 100, 0, 0) ' location of the enemy
-                    For i As Integer = 1 To 10
-                        prbEnHp.Value -= 1
-                    Next
-                    If prbEnHp.Value = 0 Then
-                        MessageBox.Show("Game Over")
-                    End If
-                End If
+                
 
         End Select
         'If picPlayer.Bounds.IntersectsWith(picEn.Bounds) Then 'May need to be moved later
@@ -155,6 +147,15 @@ Public Class Form1
         For x As Integer = 0 To Bullets.Length - 1
             Bullets(x).Left += 10
         Next
+        If bulletCol(picEn) Then
+            For i As Integer = 1 To 10
+                prbEnHp.Value -= 1
+            Next
+            If prbEnHp.Value = 0 Then
+                tmrBullet.Enabled = False
+                MessageBox.Show("Game Over")
+            End If
+        End If
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         p1b5.Left += 10
@@ -177,5 +178,32 @@ Public Class Form1
         game = "Multiplayer"
     End Sub
 
+    Public Sub GameOver()
+        MessageBox.Show("Game is over!")
+        'do something better
+
+    End Sub
+
+    Private Function bulletCol(pic As PictureBox) As Boolean
+        If p1b1.Bounds.IntersectsWith(pic.Bounds) Then
+            p1b1.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p1b2.Bounds.IntersectsWith(pic.Bounds) Then
+            p1b2.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p1b3.Bounds.IntersectsWith(pic.Bounds) Then
+            p1b3.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p1b4.Bounds.IntersectsWith(pic.Bounds) Then
+            p1b4.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p1b5.Bounds.IntersectsWith(pic.Bounds) Then
+            p1b5.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
    
 End Class
