@@ -5,6 +5,7 @@ Option Strict On
 Public Class Form1
     Dim game As String = ""
     Dim Bullets() As PictureBox = {p1b1, p1b2, p1b3, p1b4, p1b5}
+    Dim EnBullets() As PictureBox = {p2b1, p2b2, p2b3, p2b4, p2b5}
 
     'Public Class Bullet
     '    Private _x As Integer
@@ -57,8 +58,10 @@ Public Class Form1
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Dim Loc As Point
         Dim Bullets() As PictureBox = {p1b1, p1b2, p1b3, p1b4, p1b5}
+        Dim EnBullets() As PictureBox = {p2b1, p2b2, p2b3, p2b4, p2b5}
 
         Static intCount As Integer = 0
+        Static intCount2 As Integer = 0
         Select Case e.KeyCode 'the arrows are for the player on the right, WASD is for the player on the left
             Case Keys.Up
                 If game.Equals("Multiplayer") Then
@@ -127,8 +130,16 @@ Public Class Form1
                 If intCount = 5 Then
                     intCount = 0
                 End If
-                
-
+            Case Keys.D0
+                If game.Equals("Multiplayer") Then
+                    EnBullets(intCount2).Location = picEn.Location
+                    tmrEnBullet.Enabled = True
+                    EnBullets(intCount2).Visible = True
+                    intCount2 += 1
+                    If intCount2 = 5 Then
+                        intCount2 = 0
+                    End If
+                End If
         End Select
         'If picPlayer.Bounds.IntersectsWith(picEn.Bounds) Then 'May need to be moved later
         '    'picEn.SetBounds(100, Me.Width - 100, 0, 0) ' location of the enemy
@@ -148,11 +159,10 @@ Public Class Form1
             Bullets(x).Left += 10
         Next
         If bulletCol(picEn) Then
-            For i As Integer = 1 To 10
-                prbEnHp.Value -= 1
-            Next
+            prbEnHp.Value -= 10
             If prbEnHp.Value = 0 Then
                 tmrBullet.Enabled = False
+                tmrEnBullet.Enabled = False
                 MessageBox.Show("Game Over")
             End If
         End If
@@ -176,6 +186,10 @@ Public Class Form1
 
     Public Sub StartMultiplayer()
         game = "Multiplayer"
+        prbEnHp.Value = 100
+        prbHealth.Value = 100
+
+
     End Sub
 
     Public Sub GameOver()
@@ -204,6 +218,45 @@ Public Class Form1
             Return False
         End If
 
+
+    End Function
+
+    Private Function EnBulletCol(pic As PictureBox) As Boolean
+        If p2b1.Bounds.IntersectsWith(pic.Bounds) Then
+            p2b1.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p2b2.Bounds.IntersectsWith(pic.Bounds) Then
+            p2b2.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p2b3.Bounds.IntersectsWith(pic.Bounds) Then
+            p2b3.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p2b4.Bounds.IntersectsWith(pic.Bounds) Then
+            p2b4.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        ElseIf p2b5.Bounds.IntersectsWith(pic.Bounds) Then
+            p2b5.SetBounds(100, Me.Width - 100, 5, 5)
+            Return True
+        Else
+            Return False
+        End If
+
+
     End Function
    
+    Private Sub tmrEnBullet_Tick(sender As Object, e As EventArgs) Handles tmrEnBullet.Tick
+        Dim EnBullets() As PictureBox = {p2b1, p2b2, p2b3, p2b4, p2b5}
+
+        For x As Integer = 0 To EnBullets.Length - 1
+            EnBullets(x).Left -= 10
+        Next
+        If EnBulletCol(picPlayer) Then
+            prbHealth.Value -= 10
+            If prbHealth.Value = 0 Then
+                tmrEnBullet.Enabled = False
+                tmrBullet.Enabled = False
+                MessageBox.Show("Game Over")
+            End If
+        End If
+    End Sub
 End Class

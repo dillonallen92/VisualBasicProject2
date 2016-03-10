@@ -44,6 +44,12 @@ Partial Class Form1
         Me.p1b3 = New System.Windows.Forms.PictureBox()
         Me.p1b4 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrEnBullet = New System.Windows.Forms.Timer(Me.components)
+        Me.p2b1 = New System.Windows.Forms.PictureBox()
+        Me.p2b2 = New System.Windows.Forms.PictureBox()
+        Me.p2b3 = New System.Windows.Forms.PictureBox()
+        Me.p2b4 = New System.Windows.Forms.PictureBox()
+        Me.p2b5 = New System.Windows.Forms.PictureBox()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -52,6 +58,11 @@ Partial Class Form1
         CType(Me.p1b5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p1b3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p1b4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p2b1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p2b2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p2b3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p2b4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p2b5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picPlayer
@@ -98,13 +109,13 @@ Partial Class Form1
         'NormalToolStripMenuItem
         '
         Me.NormalToolStripMenuItem.Name = "NormalToolStripMenuItem"
-        Me.NormalToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.NormalToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
         Me.NormalToolStripMenuItem.Text = "Normal"
         '
         'MultiplayerToolStripMenuItem
         '
         Me.MultiplayerToolStripMenuItem.Name = "MultiplayerToolStripMenuItem"
-        Me.MultiplayerToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.MultiplayerToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
         Me.MultiplayerToolStripMenuItem.Text = "Multiplayer"
         '
         'HelpToolStripMenuItem
@@ -229,12 +240,66 @@ Partial Class Form1
         '
         Me.Timer1.Interval = 50
         '
+        'tmrEnBullet
+        '
+        Me.tmrEnBullet.Interval = 1
+        '
+        'p2b1
+        '
+        Me.p2b1.Location = New System.Drawing.Point(810, 101)
+        Me.p2b1.Name = "p2b1"
+        Me.p2b1.Size = New System.Drawing.Size(5, 5)
+        Me.p2b1.TabIndex = 12
+        Me.p2b1.TabStop = False
+        Me.p2b1.Visible = False
+        '
+        'p2b2
+        '
+        Me.p2b2.Location = New System.Drawing.Point(758, 395)
+        Me.p2b2.Name = "p2b2"
+        Me.p2b2.Size = New System.Drawing.Size(5, 5)
+        Me.p2b2.TabIndex = 13
+        Me.p2b2.TabStop = False
+        Me.p2b2.Visible = False
+        '
+        'p2b3
+        '
+        Me.p2b3.Location = New System.Drawing.Point(766, 403)
+        Me.p2b3.Name = "p2b3"
+        Me.p2b3.Size = New System.Drawing.Size(5, 5)
+        Me.p2b3.TabIndex = 14
+        Me.p2b3.TabStop = False
+        Me.p2b3.Visible = False
+        '
+        'p2b4
+        '
+        Me.p2b4.Location = New System.Drawing.Point(774, 411)
+        Me.p2b4.Name = "p2b4"
+        Me.p2b4.Size = New System.Drawing.Size(5, 5)
+        Me.p2b4.TabIndex = 15
+        Me.p2b4.TabStop = False
+        Me.p2b4.Visible = False
+        '
+        'p2b5
+        '
+        Me.p2b5.Location = New System.Drawing.Point(782, 419)
+        Me.p2b5.Name = "p2b5"
+        Me.p2b5.Size = New System.Drawing.Size(5, 5)
+        Me.p2b5.TabIndex = 16
+        Me.p2b5.TabStop = False
+        Me.p2b5.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1521, 795)
+        Me.Controls.Add(Me.p2b5)
+        Me.Controls.Add(Me.p2b4)
+        Me.Controls.Add(Me.p2b3)
+        Me.Controls.Add(Me.p2b2)
+        Me.Controls.Add(Me.p2b1)
         Me.Controls.Add(Me.p1b4)
         Me.Controls.Add(Me.p1b3)
         Me.Controls.Add(Me.p1b5)
@@ -260,6 +325,11 @@ Partial Class Form1
         CType(Me.p1b5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p1b3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p1b4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p2b1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p2b2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p2b3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p2b4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p2b5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -284,4 +354,10 @@ Partial Class Form1
     Friend WithEvents p1b3 As System.Windows.Forms.PictureBox
     Friend WithEvents p1b4 As System.Windows.Forms.PictureBox
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents tmrEnBullet As System.Windows.Forms.Timer
+    Friend WithEvents p2b1 As System.Windows.Forms.PictureBox
+    Friend WithEvents p2b2 As System.Windows.Forms.PictureBox
+    Friend WithEvents p2b3 As System.Windows.Forms.PictureBox
+    Friend WithEvents p2b4 As System.Windows.Forms.PictureBox
+    Friend WithEvents p2b5 As System.Windows.Forms.PictureBox
 End Class
