@@ -55,7 +55,7 @@ Public Class Form1
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Dim Loc As Point
-        Select Case e.KeyCode
+        Select Case e.KeyCode 'the arrows are for the player on the right, WASD is for the player on the left
             Case Keys.Up
                 If Not picEn.Location.Y - 5 < 70 Then
                     Loc = New Point(picEn.Location.X, picEn.Location.Y - 5)
