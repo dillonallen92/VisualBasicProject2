@@ -3,6 +3,7 @@ Option Infer Off
 Option Strict On
 
 Public Class Form1
+    Dim game As String = ""
     Public Bullets As New List(Of Bullet)
 
     Public Class Bullet
@@ -57,33 +58,39 @@ Public Class Form1
         Dim Loc As Point
         Select Case e.KeyCode 'the arrows are for the player on the right, WASD is for the player on the left
             Case Keys.Up
-                If Not picEn.Location.Y - 5 < 70 Then
-                    Loc = New Point(picEn.Location.X, picEn.Location.Y - 5)
-                    picEn.Location = Loc
+                If game.Equals("Multiplayer") Then
+                    If Not picEn.Location.Y - 5 < 70 Then
+                        Loc = New Point(picEn.Location.X, picEn.Location.Y - 5)
+                        picEn.Location = Loc
+                    End If
                 End If
 
             Case Keys.W
-                If Not picPlayer.Location.Y - 5 < 70 Then
-                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 5)
-                    picPlayer.Location = Loc
-                End If
+                    If Not picPlayer.Location.Y - 5 < 70 Then
+                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 5)
+                        picPlayer.Location = Loc
+                    End If
 
             Case Keys.Down
-                If Not picEn.Location.Y - 5 > Me.Height - picEn.Height * 1.6 Then
-                    Loc = New Point(picEn.Location.X, picEn.Location.Y + 5)
-                    picEn.Location = Loc
-                End If
+                    If game.Equals("Multiplayer") Then
+                        If Not picEn.Location.Y - 5 > Me.Height - picEn.Height * 1.6 Then
+                            Loc = New Point(picEn.Location.X, picEn.Location.Y + 5)
+                            picEn.Location = Loc
+                        End If
+                    End If
 
             Case Keys.S
-                If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
-                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 5)
-                    picPlayer.Location = Loc
-                End If
+                    If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
+                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 5)
+                        picPlayer.Location = Loc
+                    End If
 
             Case Keys.Left
-                If Not picEn.Location.X - 5 < 0 Then
-                    Loc = New Point(picEn.Location.X - 5, picEn.Location.Y)
-                    picEn.Location = Loc
+                If game.Equals("Multiplayer") Then
+                    If Not picEn.Location.X - 5 < 0 Then
+                        Loc = New Point(picEn.Location.X - 5, picEn.Location.Y)
+                        picEn.Location = Loc
+                    End If
                 End If
 
             Case Keys.A
@@ -93,9 +100,11 @@ Public Class Form1
                 End If
 
             Case Keys.Right
-                If Not picEn.Location.X - 5 > Me.Width - picEn.Width - 5 Then
-                    Loc = New Point(picEn.Location.X + 5, picEn.Location.Y)
-                    picEn.Location = Loc
+                If game.Equals("Multiplayer") Then
+                    If Not picEn.Location.X - 5 > Me.Width - picEn.Width - 5 Then
+                        Loc = New Point(picEn.Location.X + 5, picEn.Location.Y)
+                        picEn.Location = Loc
+                    End If
                 End If
 
             Case Keys.D
@@ -129,4 +138,21 @@ Public Class Form1
             End If
         Next
     End Sub
+
+    Private Sub NormalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NormalToolStripMenuItem.Click
+        StartGame()
+    End Sub
+
+    Private Sub MultiplayerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MultiplayerToolStripMenuItem.Click
+        StartMultiplayer()
+    End Sub
+
+    Public Sub StartGame()
+        game = "Normal"
+    End Sub
+
+    Public Sub StartMultiplayer()
+        game = "Multiplayer"
+    End Sub
+
 End Class
