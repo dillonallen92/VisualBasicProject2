@@ -4,42 +4,42 @@ Option Strict On
 
 Public Class Form1
     Dim game As String = ""
-    Public Bullets As New List(Of Bullet)
+    Dim Bullets() As PictureBox = {p1b1, p1b2, p1b3, p1b4, p1b5}
 
-    Public Class Bullet
-        Private _x As Integer
-        Private _Y As Integer
-        Public Property X As Integer
-            Get
-                Return _x
-            End Get
-            Set(value As Integer)
-                If value > 100 Then
-                    _x = value
-                Else
-                    _x = 100
-                End If
-            End Set
-        End Property
+    'Public Class Bullet
+    '    Private _x As Integer
+    '    Private _Y As Integer
+    '    Public Property X As Integer
+    '        Get
+    '            Return _x
+    '        End Get
+    '        Set(value As Integer)
+    '            If value > 100 Then
+    '                _x = value
+    '            Else
+    '                _x = 100
+    '            End If
+    '        End Set
+    '    End Property
 
-        Public Property Y As Integer
-            Get
-                Return _Y
-            End Get
-            Set(value As Integer)
-                If value > 70 Then
-                    _Y = value
-                Else
-                    _Y = 70
-                End If
-            End Set
-        End Property
+    '    Public Property Y As Integer
+    '        Get
+    '            Return _Y
+    '        End Get
+    '        Set(value As Integer)
+    '            If value > 70 Then
+    '                _Y = value
+    '            Else
+    '                _Y = 70
+    '            End If
+    '        End Set
+    '    End Property
 
-        Public Sub New(ByVal currentX As Integer, ByVal currentY As Integer)
-            X = currentX
-            Y = currentY
-        End Sub
-    End Class
+    '    Public Sub New(ByVal currentX As Integer, ByVal currentY As Integer)
+    '        X = currentX
+    '        Y = currentY
+    '    End Sub
+    'End Class
     Public Class Ship
         Private _health As Double
         Private _damage As Double
@@ -56,6 +56,9 @@ Public Class Form1
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Dim Loc As Point
+        Dim Bullets() As PictureBox = {p1b1, p1b2, p1b3, p1b4, p1b5}
+
+        Static intCount As Integer = 0
         Select Case e.KeyCode 'the arrows are for the player on the right, WASD is for the player on the left
             Case Keys.Up
                 If game.Equals("Multiplayer") Then
@@ -113,30 +116,49 @@ Public Class Form1
                     picPlayer.Location = Loc
                 End If
 
-            Case Keys.Space
+            Case Keys.Space 'bullet for player one
+                Bullets(intCount).Location = picPlayer.Location
                 tmrBullet.Enabled = True
-                Dim b As New Bullet(picPlayer.Location.X, picPlayer.Location.Y)
-                Bullets.Add(b)
+
+                Timer1.Enabled = True
+
+                Bullets(intCount).Visible = True
+                intCount += 1
+                If intCount = 5 Then
+                    intCount = 0
+                End If
+                If Bullets(intCount).Bounds.IntersectsWith(picEn.Bounds) Then 'May need to be moved later
+                    'picEn.SetBounds(100, Me.Width - 100, 0, 0) ' location of the enemy
+                    For i As Integer = 1 To 10
+                        prbEnHp.Value -= 1
+                    Next
+                    If prbEnHp.Value = 0 Then
+                        MessageBox.Show("Game Over")
+                    End If
+                End If
 
         End Select
-        If picPlayer.Bounds.IntersectsWith(picEn.Bounds) Then 'May need to be moved later
-            picEn.SetBounds(100, Me.Width - 100, 0, 0) ' location of the enemy
-            For i As Integer = 1 To 10
-                prbHealth.Value -= 1
-            Next
-            If prbHealth.Value = 0 Then
-                MessageBox.Show("Game Over")
-            End If
-        End If
+        'If picPlayer.Bounds.IntersectsWith(picEn.Bounds) Then 'May need to be moved later
+        '    'picEn.SetBounds(100, Me.Width - 100, 0, 0) ' location of the enemy
+        '    For i As Integer = 1 To 10
+        '        prbHealth.Value -= 1
+        '    Next
+        '    If prbHealth.Value = 0 Then
+        '        MessageBox.Show("Game Over")
+        '    End If
+        'End If
     End Sub
 
     Private Sub tmrBullet_Tick(sender As Object, e As EventArgs) Handles tmrBullet.Tick
-        For Each b As Bullet In Bullets
-            b.X += 5
-            If b.X = picEn.Location.X AndAlso b.Y = picEn.Location.Y Then
-                MessageBox.Show("Hit") 'Test
-            End If
+        Dim Bullets() As PictureBox = {p1b1, p1b2, p1b3, p1b4, p1b5}
+
+        For x As Integer = 0 To Bullets.Length - 1
+            Bullets(x).Left += 10
         Next
+    End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        p1b5.Left += 10
+
     End Sub
 
     Private Sub NormalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NormalToolStripMenuItem.Click
@@ -155,4 +177,5 @@ Public Class Form1
         game = "Multiplayer"
     End Sub
 
+   
 End Class

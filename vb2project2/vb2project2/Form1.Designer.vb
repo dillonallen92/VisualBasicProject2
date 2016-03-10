@@ -28,6 +28,8 @@ Partial Class Form1
         Me.picEn = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.StartGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NormalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MultiplayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,12 +37,21 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tmrBullet = New System.Windows.Forms.Timer(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
-        Me.NormalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MultiplayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.prbEnHp = New System.Windows.Forms.ProgressBar()
+        Me.p1b1 = New System.Windows.Forms.PictureBox()
+        Me.p1b2 = New System.Windows.Forms.PictureBox()
+        Me.p1b5 = New System.Windows.Forms.PictureBox()
+        Me.p1b3 = New System.Windows.Forms.PictureBox()
+        Me.p1b4 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.p1b1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p1b2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p1b5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p1b3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p1b4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picPlayer
@@ -84,6 +95,18 @@ Partial Class Form1
         Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(95, 24)
         Me.StartGameToolStripMenuItem.Text = "Start Game"
         '
+        'NormalToolStripMenuItem
+        '
+        Me.NormalToolStripMenuItem.Name = "NormalToolStripMenuItem"
+        Me.NormalToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.NormalToolStripMenuItem.Text = "Normal"
+        '
+        'MultiplayerToolStripMenuItem
+        '
+        Me.MultiplayerToolStripMenuItem.Name = "MultiplayerToolStripMenuItem"
+        Me.MultiplayerToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.MultiplayerToolStripMenuItem.Text = "Multiplayer"
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InstructionsToolStripMenuItem, Me.AboutToolStripMenuItem})
@@ -94,13 +117,13 @@ Partial Class Form1
         'InstructionsToolStripMenuItem
         '
         Me.InstructionsToolStripMenuItem.Name = "InstructionsToolStripMenuItem"
-        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
         Me.InstructionsToolStripMenuItem.Text = "Instructions"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'prbHealth
@@ -128,7 +151,7 @@ Partial Class Form1
         '
         'tmrBullet
         '
-        Me.tmrBullet.Interval = 1000
+        Me.tmrBullet.Interval = 1
         '
         'Label2
         '
@@ -141,28 +164,70 @@ Partial Class Form1
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Health"
         '
-        'ProgressBar2
+        'prbEnHp
         '
-        Me.ProgressBar2.BackColor = System.Drawing.SystemColors.Control
-        Me.ProgressBar2.Location = New System.Drawing.Point(1375, 54)
-        Me.ProgressBar2.Margin = New System.Windows.Forms.Padding(4)
-        Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ProgressBar2.Size = New System.Drawing.Size(133, 28)
-        Me.ProgressBar2.TabIndex = 6
-        Me.ProgressBar2.Value = 100
+        Me.prbEnHp.BackColor = System.Drawing.SystemColors.Control
+        Me.prbEnHp.Location = New System.Drawing.Point(1375, 54)
+        Me.prbEnHp.Margin = New System.Windows.Forms.Padding(4)
+        Me.prbEnHp.Name = "prbEnHp"
+        Me.prbEnHp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.prbEnHp.Size = New System.Drawing.Size(133, 28)
+        Me.prbEnHp.TabIndex = 6
+        Me.prbEnHp.Value = 100
         '
-        'NormalToolStripMenuItem
+        'p1b1
         '
-        Me.NormalToolStripMenuItem.Name = "NormalToolStripMenuItem"
-        Me.NormalToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
-        Me.NormalToolStripMenuItem.Text = "Normal"
+        Me.p1b1.Location = New System.Drawing.Point(169, 107)
+        Me.p1b1.Name = "p1b1"
+        Me.p1b1.Size = New System.Drawing.Size(5, 5)
+        Me.p1b1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.p1b1.TabIndex = 7
+        Me.p1b1.TabStop = False
+        Me.p1b1.Visible = False
         '
-        'MultiplayerToolStripMenuItem
+        'p1b2
         '
-        Me.MultiplayerToolStripMenuItem.Name = "MultiplayerToolStripMenuItem"
-        Me.MultiplayerToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
-        Me.MultiplayerToolStripMenuItem.Text = "Multiplayer"
+        Me.p1b2.Location = New System.Drawing.Point(434, 147)
+        Me.p1b2.Name = "p1b2"
+        Me.p1b2.Size = New System.Drawing.Size(5, 5)
+        Me.p1b2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.p1b2.TabIndex = 8
+        Me.p1b2.TabStop = False
+        Me.p1b2.Visible = False
+        '
+        'p1b5
+        '
+        Me.p1b5.Location = New System.Drawing.Point(613, 107)
+        Me.p1b5.Name = "p1b5"
+        Me.p1b5.Size = New System.Drawing.Size(5, 5)
+        Me.p1b5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.p1b5.TabIndex = 9
+        Me.p1b5.TabStop = False
+        Me.p1b5.Visible = False
+        '
+        'p1b3
+        '
+        Me.p1b3.Location = New System.Drawing.Point(515, 107)
+        Me.p1b3.Name = "p1b3"
+        Me.p1b3.Size = New System.Drawing.Size(5, 5)
+        Me.p1b3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.p1b3.TabIndex = 10
+        Me.p1b3.TabStop = False
+        Me.p1b3.Visible = False
+        '
+        'p1b4
+        '
+        Me.p1b4.Location = New System.Drawing.Point(376, 181)
+        Me.p1b4.Name = "p1b4"
+        Me.p1b4.Size = New System.Drawing.Size(5, 5)
+        Me.p1b4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.p1b4.TabIndex = 11
+        Me.p1b4.TabStop = False
+        Me.p1b4.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 50
         '
         'Form1
         '
@@ -170,7 +235,12 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1521, 795)
-        Me.Controls.Add(Me.ProgressBar2)
+        Me.Controls.Add(Me.p1b4)
+        Me.Controls.Add(Me.p1b3)
+        Me.Controls.Add(Me.p1b5)
+        Me.Controls.Add(Me.p1b2)
+        Me.Controls.Add(Me.p1b1)
+        Me.Controls.Add(Me.prbEnHp)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.prbHealth)
@@ -185,6 +255,11 @@ Partial Class Form1
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.p1b1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p1b2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p1b5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p1b3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p1b4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -200,7 +275,13 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents tmrBullet As Timer
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ProgressBar2 As System.Windows.Forms.ProgressBar
+    Friend WithEvents prbEnHp As System.Windows.Forms.ProgressBar
     Friend WithEvents NormalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MultiplayerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents p1b1 As System.Windows.Forms.PictureBox
+    Friend WithEvents p1b2 As System.Windows.Forms.PictureBox
+    Friend WithEvents p1b5 As System.Windows.Forms.PictureBox
+    Friend WithEvents p1b3 As System.Windows.Forms.PictureBox
+    Friend WithEvents p1b4 As System.Windows.Forms.PictureBox
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class
