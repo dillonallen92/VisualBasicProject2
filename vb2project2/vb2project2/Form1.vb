@@ -80,64 +80,68 @@ Public Class Form1
             Case Keys.Down
                     If game.Equals("Multiplayer") Then
                         If Not picEn.Location.Y - 5 > Me.Height - picEn.Height * 1.6 Then
-                            Loc = New Point(picEn.Location.X, picEn.Location.Y + 5)
+                        Loc = New Point(picEn.Location.X, picEn.Location.Y + 50)
                             picEn.Location = Loc
                         End If
                     End If
 
             Case Keys.S
                     If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
-                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 5)
+                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 50)
                         picPlayer.Location = Loc
                     End If
 
             Case Keys.Left
                 If game.Equals("Multiplayer") Then
                     If Not picEn.Location.X - 5 < 0 Then
-                        Loc = New Point(picEn.Location.X - 5, picEn.Location.Y)
+                        Loc = New Point(picEn.Location.X - 50, picEn.Location.Y)
                         picEn.Location = Loc
                     End If
                 End If
 
             Case Keys.A
                 If Not picPlayer.Location.X - 5 < 0 Then
-                    Loc = New Point(picPlayer.Location.X - 5, picPlayer.Location.Y)
+                    Loc = New Point(picPlayer.Location.X - 50, picPlayer.Location.Y)
                     picPlayer.Location = Loc
                 End If
 
             Case Keys.Right
                 If game.Equals("Multiplayer") Then
                     If Not picEn.Location.X - 5 > Me.Width - picEn.Width - 5 Then
-                        Loc = New Point(picEn.Location.X + 5, picEn.Location.Y)
+                        Loc = New Point(picEn.Location.X + 50, picEn.Location.Y)
                         picEn.Location = Loc
                     End If
                 End If
 
             Case Keys.D
                 If Not picPlayer.Location.X - 5 > Me.Width - picPlayer.Width - 5 Then
-                    Loc = New Point(picPlayer.Location.X + 5, picPlayer.Location.Y)
+                    Loc = New Point(picPlayer.Location.X + 50, picPlayer.Location.Y)
                     picPlayer.Location = Loc
                 End If
 
             Case Keys.Space 'bullet for player one
-                Bullets(intCount).Location = picPlayer.Location
-                tmrBullet.Enabled = True
+                If game.Equals("Over") = False Then
+                    Bullets(intCount).Location = picPlayer.Location
+                    tmrBullet.Enabled = True
 
-                Timer1.Enabled = True
+                    Timer1.Enabled = True
 
-                Bullets(intCount).Visible = True
-                intCount += 1
-                If intCount = 5 Then
-                    intCount = 0
+                    Bullets(intCount).Visible = True
+                    intCount += 1
+                    If intCount = 5 Then
+                        intCount = 0
+                    End If
                 End If
             Case Keys.D0
                 If game.Equals("Multiplayer") Then
-                    EnBullets(intCount2).Location = picEn.Location
-                    tmrEnBullet.Enabled = True
-                    EnBullets(intCount2).Visible = True
-                    intCount2 += 1
-                    If intCount2 = 5 Then
-                        intCount2 = 0
+                    If game.Equals("Over") = False Then
+                        EnBullets(intCount2).Location = picEn.Location
+                        tmrEnBullet.Enabled = True
+                        EnBullets(intCount2).Visible = True
+                        intCount2 += 1
+                        If intCount2 = 5 Then
+                            intCount2 = 0
+                        End If
                     End If
                 End If
         End Select
@@ -163,7 +167,7 @@ Public Class Form1
             If prbEnHp.Value = 0 Then
                 tmrBullet.Enabled = False
                 tmrEnBullet.Enabled = False
-                MessageBox.Show("Game Over")
+                GameOver()
             End If
         End If
     End Sub
@@ -189,12 +193,13 @@ Public Class Form1
         prbEnHp.Value = 100
         prbHealth.Value = 100
 
-
+        picPlayer.SetBounds(90, 247, 0, 0)
+        picEn.SetBounds(888, 247, 0, 0)
     End Sub
 
     Public Sub GameOver()
         MessageBox.Show("Game is over!")
-        'do something better
+        game = "Over"
 
     End Sub
 
@@ -255,7 +260,7 @@ Public Class Form1
             If prbHealth.Value = 0 Then
                 tmrEnBullet.Enabled = False
                 tmrBullet.Enabled = False
-                MessageBox.Show("Game Over")
+                GameOver()
             End If
         End If
     End Sub
