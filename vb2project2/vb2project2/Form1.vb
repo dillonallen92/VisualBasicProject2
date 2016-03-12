@@ -66,14 +66,14 @@ Public Class Form1
             Case Keys.Up
                 If game.Equals("Multiplayer") Then
                     If Not picEn.Location.Y - 5 < 70 Then
-                        Loc = New Point(picEn.Location.X, picEn.Location.Y - 5)
+                        Loc = New Point(picEn.Location.X, picEn.Location.Y - 50)
                         picEn.Location = Loc
                     End If
                 End If
 
             Case Keys.W
                     If Not picPlayer.Location.Y - 5 < 70 Then
-                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 5)
+                    Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 50)
                         picPlayer.Location = Loc
                     End If
 
