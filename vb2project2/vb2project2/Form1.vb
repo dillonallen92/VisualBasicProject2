@@ -170,6 +170,7 @@ Public Class Form1
                 GameOver()
             End If
         End If
+
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         p1b5.Left += 10
@@ -184,8 +185,11 @@ Public Class Form1
         StartMultiplayer()
     End Sub
 
-    Public Sub StartGame()
+    Public Sub StartGame() 'start the normal game here.... going to spawn an array of enemies that will keep respawning until character dies
         game = "Normal"
+        prbHealth.Value = 100
+        picPlayer.SetBounds(90, 247, 0, 0)
+
     End Sub
 
     Public Sub StartMultiplayer()
