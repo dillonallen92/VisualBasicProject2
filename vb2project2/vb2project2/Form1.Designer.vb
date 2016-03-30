@@ -67,7 +67,7 @@ Partial Class Form1
         '
         'picPlayer
         '
-        Me.picPlayer.Image = CType(resources.GetObject("picPlayer.Image"), System.Drawing.Image)
+        Me.picPlayer.Image = Global.vb2project2.My.Resources.Resources.bl_ship
         Me.picPlayer.InitialImage = CType(resources.GetObject("picPlayer.InitialImage"), System.Drawing.Image)
         Me.picPlayer.Location = New System.Drawing.Point(120, 304)
         Me.picPlayer.Margin = New System.Windows.Forms.Padding(4)
@@ -79,7 +79,7 @@ Partial Class Form1
         '
         'picEn
         '
-        Me.picEn.Image = CType(resources.GetObject("picEn.Image"), System.Drawing.Image)
+        Me.picEn.Image = Global.vb2project2.My.Resources.Resources.cloudEnemy
         Me.picEn.Location = New System.Drawing.Point(1185, 420)
         Me.picEn.Margin = New System.Windows.Forms.Padding(4)
         Me.picEn.Name = "picEn"
@@ -293,7 +293,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.vb2project2.My.Resources.Resources.space_bg
         Me.ClientSize = New System.Drawing.Size(1521, 795)
         Me.Controls.Add(Me.p2b5)
         Me.Controls.Add(Me.p2b4)
