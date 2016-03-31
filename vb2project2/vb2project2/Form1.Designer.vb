@@ -23,7 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.picPlayer = New System.Windows.Forms.PictureBox()
         Me.picEn = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -50,6 +49,11 @@ Partial Class Form1
         Me.p2b3 = New System.Windows.Forms.PictureBox()
         Me.p2b4 = New System.Windows.Forms.PictureBox()
         Me.p2b5 = New System.Windows.Forms.PictureBox()
+        Me.tmrEnemy = New System.Windows.Forms.Timer(Me.components)
+        Me.picEn2 = New System.Windows.Forms.PictureBox()
+        Me.picEn3 = New System.Windows.Forms.PictureBox()
+        Me.picEn4 = New System.Windows.Forms.PictureBox()
+        Me.picEn5 = New System.Windows.Forms.PictureBox()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -63,14 +67,18 @@ Partial Class Form1
         CType(Me.p2b3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p2b4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p2b5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picEn2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picEn3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picEn4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picEn5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picPlayer
         '
+        Me.picPlayer.ErrorImage = Global.vb2project2.My.Resources.Resources.bl_ship
         Me.picPlayer.Image = Global.vb2project2.My.Resources.Resources.bl_ship
-        Me.picPlayer.InitialImage = CType(resources.GetObject("picPlayer.InitialImage"), System.Drawing.Image)
-        Me.picPlayer.Location = New System.Drawing.Point(120, 304)
-        Me.picPlayer.Margin = New System.Windows.Forms.Padding(4)
+        Me.picPlayer.InitialImage = Global.vb2project2.My.Resources.Resources.bl_ship
+        Me.picPlayer.Location = New System.Drawing.Point(90, 247)
         Me.picPlayer.Name = "picPlayer"
         Me.picPlayer.Size = New System.Drawing.Size(100, 50)
         Me.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -80,8 +88,7 @@ Partial Class Form1
         'picEn
         '
         Me.picEn.Image = Global.vb2project2.My.Resources.Resources.cloudEnemy
-        Me.picEn.Location = New System.Drawing.Point(1185, 420)
-        Me.picEn.Margin = New System.Windows.Forms.Padding(4)
+        Me.picEn.Location = New System.Drawing.Point(889, 341)
         Me.picEn.Name = "picEn"
         Me.picEn.Size = New System.Drawing.Size(100, 50)
         Me.picEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -94,8 +101,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1521, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1141, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -103,48 +109,47 @@ Partial Class Form1
         '
         Me.StartGameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NormalToolStripMenuItem, Me.MultiplayerToolStripMenuItem})
         Me.StartGameToolStripMenuItem.Name = "StartGameToolStripMenuItem"
-        Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(95, 24)
+        Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
         Me.StartGameToolStripMenuItem.Text = "Start Game"
         '
         'NormalToolStripMenuItem
         '
         Me.NormalToolStripMenuItem.Name = "NormalToolStripMenuItem"
-        Me.NormalToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
+        Me.NormalToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.NormalToolStripMenuItem.Text = "Normal"
         '
         'MultiplayerToolStripMenuItem
         '
         Me.MultiplayerToolStripMenuItem.Name = "MultiplayerToolStripMenuItem"
-        Me.MultiplayerToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
+        Me.MultiplayerToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.MultiplayerToolStripMenuItem.Text = "Multiplayer"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InstructionsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(53, 24)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'InstructionsToolStripMenuItem
         '
         Me.InstructionsToolStripMenuItem.Name = "InstructionsToolStripMenuItem"
-        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
+        Me.InstructionsToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.InstructionsToolStripMenuItem.Text = "Instructions"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(159, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'prbHealth
         '
         Me.prbHealth.BackColor = System.Drawing.SystemColors.Control
-        Me.prbHealth.Location = New System.Drawing.Point(16, 54)
-        Me.prbHealth.Margin = New System.Windows.Forms.Padding(4)
+        Me.prbHealth.Location = New System.Drawing.Point(12, 44)
         Me.prbHealth.Name = "prbHealth"
         Me.prbHealth.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.prbHealth.Size = New System.Drawing.Size(133, 28)
+        Me.prbHealth.Size = New System.Drawing.Size(100, 23)
         Me.prbHealth.TabIndex = 0
         Me.prbHealth.Value = 100
         '
@@ -153,10 +158,9 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.Desktop
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(16, 34)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 17)
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Health"
         '
@@ -169,26 +173,27 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(1459, 34)
+        Me.Label2.Location = New System.Drawing.Point(1094, 28)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 17)
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Health"
         '
         'prbEnHp
         '
         Me.prbEnHp.BackColor = System.Drawing.SystemColors.Control
-        Me.prbEnHp.Location = New System.Drawing.Point(1375, 54)
-        Me.prbEnHp.Margin = New System.Windows.Forms.Padding(4)
+        Me.prbEnHp.Location = New System.Drawing.Point(1031, 44)
         Me.prbEnHp.Name = "prbEnHp"
         Me.prbEnHp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.prbEnHp.Size = New System.Drawing.Size(133, 28)
+        Me.prbEnHp.Size = New System.Drawing.Size(100, 23)
         Me.prbEnHp.TabIndex = 6
         Me.prbEnHp.Value = 100
         '
         'p1b1
         '
-        Me.p1b1.Location = New System.Drawing.Point(169, 107)
+        Me.p1b1.Location = New System.Drawing.Point(127, 87)
+        Me.p1b1.Margin = New System.Windows.Forms.Padding(2)
         Me.p1b1.Name = "p1b1"
         Me.p1b1.Size = New System.Drawing.Size(5, 5)
         Me.p1b1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -198,7 +203,8 @@ Partial Class Form1
         '
         'p1b2
         '
-        Me.p1b2.Location = New System.Drawing.Point(434, 147)
+        Me.p1b2.Location = New System.Drawing.Point(326, 119)
+        Me.p1b2.Margin = New System.Windows.Forms.Padding(2)
         Me.p1b2.Name = "p1b2"
         Me.p1b2.Size = New System.Drawing.Size(5, 5)
         Me.p1b2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -208,7 +214,8 @@ Partial Class Form1
         '
         'p1b5
         '
-        Me.p1b5.Location = New System.Drawing.Point(613, 107)
+        Me.p1b5.Location = New System.Drawing.Point(460, 87)
+        Me.p1b5.Margin = New System.Windows.Forms.Padding(2)
         Me.p1b5.Name = "p1b5"
         Me.p1b5.Size = New System.Drawing.Size(5, 5)
         Me.p1b5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -218,7 +225,8 @@ Partial Class Form1
         '
         'p1b3
         '
-        Me.p1b3.Location = New System.Drawing.Point(515, 107)
+        Me.p1b3.Location = New System.Drawing.Point(386, 87)
+        Me.p1b3.Margin = New System.Windows.Forms.Padding(2)
         Me.p1b3.Name = "p1b3"
         Me.p1b3.Size = New System.Drawing.Size(5, 5)
         Me.p1b3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -228,7 +236,8 @@ Partial Class Form1
         '
         'p1b4
         '
-        Me.p1b4.Location = New System.Drawing.Point(376, 181)
+        Me.p1b4.Location = New System.Drawing.Point(282, 147)
+        Me.p1b4.Margin = New System.Windows.Forms.Padding(2)
         Me.p1b4.Name = "p1b4"
         Me.p1b4.Size = New System.Drawing.Size(5, 5)
         Me.p1b4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -246,55 +255,109 @@ Partial Class Form1
         '
         'p2b1
         '
-        Me.p2b1.Location = New System.Drawing.Point(810, 101)
+        Me.p2b1.Location = New System.Drawing.Point(608, 82)
+        Me.p2b1.Margin = New System.Windows.Forms.Padding(2)
         Me.p2b1.Name = "p2b1"
-        Me.p2b1.Size = New System.Drawing.Size(5, 5)
+        Me.p2b1.Size = New System.Drawing.Size(4, 4)
         Me.p2b1.TabIndex = 12
         Me.p2b1.TabStop = False
         Me.p2b1.Visible = False
         '
         'p2b2
         '
-        Me.p2b2.Location = New System.Drawing.Point(758, 395)
+        Me.p2b2.Location = New System.Drawing.Point(568, 321)
+        Me.p2b2.Margin = New System.Windows.Forms.Padding(2)
         Me.p2b2.Name = "p2b2"
-        Me.p2b2.Size = New System.Drawing.Size(5, 5)
+        Me.p2b2.Size = New System.Drawing.Size(4, 4)
         Me.p2b2.TabIndex = 13
         Me.p2b2.TabStop = False
         Me.p2b2.Visible = False
         '
         'p2b3
         '
-        Me.p2b3.Location = New System.Drawing.Point(766, 403)
+        Me.p2b3.Location = New System.Drawing.Point(574, 327)
+        Me.p2b3.Margin = New System.Windows.Forms.Padding(2)
         Me.p2b3.Name = "p2b3"
-        Me.p2b3.Size = New System.Drawing.Size(5, 5)
+        Me.p2b3.Size = New System.Drawing.Size(4, 4)
         Me.p2b3.TabIndex = 14
         Me.p2b3.TabStop = False
         Me.p2b3.Visible = False
         '
         'p2b4
         '
-        Me.p2b4.Location = New System.Drawing.Point(774, 411)
+        Me.p2b4.Location = New System.Drawing.Point(580, 334)
+        Me.p2b4.Margin = New System.Windows.Forms.Padding(2)
         Me.p2b4.Name = "p2b4"
-        Me.p2b4.Size = New System.Drawing.Size(5, 5)
+        Me.p2b4.Size = New System.Drawing.Size(4, 4)
         Me.p2b4.TabIndex = 15
         Me.p2b4.TabStop = False
         Me.p2b4.Visible = False
         '
         'p2b5
         '
-        Me.p2b5.Location = New System.Drawing.Point(782, 419)
+        Me.p2b5.Location = New System.Drawing.Point(586, 340)
+        Me.p2b5.Margin = New System.Windows.Forms.Padding(2)
         Me.p2b5.Name = "p2b5"
-        Me.p2b5.Size = New System.Drawing.Size(5, 5)
+        Me.p2b5.Size = New System.Drawing.Size(4, 4)
         Me.p2b5.TabIndex = 16
         Me.p2b5.TabStop = False
         Me.p2b5.Visible = False
         '
+        'tmrEnemy
+        '
+        Me.tmrEnemy.Enabled = True
+        '
+        'picEn2
+        '
+        Me.picEn2.Image = Global.vb2project2.My.Resources.Resources.cloudEnemy
+        Me.picEn2.Location = New System.Drawing.Point(889, 275)
+        Me.picEn2.Name = "picEn2"
+        Me.picEn2.Size = New System.Drawing.Size(100, 50)
+        Me.picEn2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picEn2.TabIndex = 17
+        Me.picEn2.TabStop = False
+        '
+        'picEn3
+        '
+        Me.picEn3.Image = Global.vb2project2.My.Resources.Resources.cloudEnemy
+        Me.picEn3.Location = New System.Drawing.Point(889, 208)
+        Me.picEn3.Name = "picEn3"
+        Me.picEn3.Size = New System.Drawing.Size(100, 50)
+        Me.picEn3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picEn3.TabIndex = 18
+        Me.picEn3.TabStop = False
+        '
+        'picEn4
+        '
+        Me.picEn4.Image = Global.vb2project2.My.Resources.Resources.cloudEnemy
+        Me.picEn4.Location = New System.Drawing.Point(889, 147)
+        Me.picEn4.Name = "picEn4"
+        Me.picEn4.Size = New System.Drawing.Size(100, 50)
+        Me.picEn4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picEn4.TabIndex = 19
+        Me.picEn4.TabStop = False
+        '
+        'picEn5
+        '
+        Me.picEn5.Image = Global.vb2project2.My.Resources.Resources.cloudEnemy
+        Me.picEn5.Location = New System.Drawing.Point(889, 406)
+        Me.picEn5.Name = "picEn5"
+        Me.picEn5.Size = New System.Drawing.Size(100, 50)
+        Me.picEn5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picEn5.TabIndex = 20
+        Me.picEn5.TabStop = False
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.vb2project2.My.Resources.Resources.space_bg
-        Me.ClientSize = New System.Drawing.Size(1521, 795)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1141, 646)
+        Me.Controls.Add(Me.picEn5)
+        Me.Controls.Add(Me.picEn4)
+        Me.Controls.Add(Me.picEn3)
+        Me.Controls.Add(Me.picEn2)
         Me.Controls.Add(Me.p2b5)
         Me.Controls.Add(Me.p2b4)
         Me.Controls.Add(Me.p2b3)
@@ -313,7 +376,6 @@ Partial Class Form1
         Me.Controls.Add(Me.picPlayer)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "EbolaKiller"
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
@@ -330,6 +392,10 @@ Partial Class Form1
         CType(Me.p2b3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p2b4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p2b5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEn2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEn3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEn4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picEn5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -360,4 +426,9 @@ Partial Class Form1
     Friend WithEvents p2b3 As System.Windows.Forms.PictureBox
     Friend WithEvents p2b4 As System.Windows.Forms.PictureBox
     Friend WithEvents p2b5 As System.Windows.Forms.PictureBox
+    Friend WithEvents tmrEnemy As System.Windows.Forms.Timer
+    Friend WithEvents picEn2 As System.Windows.Forms.PictureBox
+    Friend WithEvents picEn3 As System.Windows.Forms.PictureBox
+    Friend WithEvents picEn4 As System.Windows.Forms.PictureBox
+    Friend WithEvents picEn5 As System.Windows.Forms.PictureBox
 End Class

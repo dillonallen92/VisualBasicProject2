@@ -117,13 +117,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\space_bg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bl_ship.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cloudEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\space_bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
