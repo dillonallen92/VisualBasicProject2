@@ -11,12 +11,16 @@ Public Class Form1
     Public Class Ship
         Private _health As Double
         Private _damage As Double
+        Public _speed As Integer = 20
     End Class
 
     Public Class Enemy
         Inherits Ship
         'Private _speed As Double = 20.0
     End Class
+
+    Dim player1 As Ship = New Ship()
+    Dim player2 As Enemy = New Enemy()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -42,56 +46,56 @@ Public Class Form1
                 Case Keys.Up
                     If game.Equals("Multiplayer") Then
                         If Not picEn.Location.Y - 5 < 70 Then
-                            Loc = New Point(picEn.Location.X, picEn.Location.Y - 20)
+                            Loc = New Point(picEn.Location.X, picEn.Location.Y - player2._speed)
                             picEn.Location = Loc
                         End If
                     End If
 
                 Case Keys.W
                     If Not picPlayer.Location.Y - 5 < 70 Then
-                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - 20)
+                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y - player1._speed)
                         picPlayer.Location = Loc
                     End If
 
                 Case Keys.Down
                     If game.Equals("Multiplayer") Then
                         If Not picEn.Location.Y - 5 > Me.Height - picEn.Height * 1.6 Then
-                            Loc = New Point(picEn.Location.X, picEn.Location.Y + 20)
+                            Loc = New Point(picEn.Location.X, picEn.Location.Y + player2._speed)
                             picEn.Location = Loc
                         End If
                     End If
 
                 Case Keys.S
                     If Not picPlayer.Location.Y - 5 > Me.Height - picPlayer.Height * 1.6 Then
-                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + 20)
+                        Loc = New Point(picPlayer.Location.X, picPlayer.Location.Y + player1._speed)
                         picPlayer.Location = Loc
                     End If
 
                 Case Keys.Left
                     If game.Equals("Multiplayer") Then
                         If Not picEn.Location.X - 5 < 0 Then
-                            Loc = New Point(picEn.Location.X - 20, picEn.Location.Y)
+                            Loc = New Point(picEn.Location.X - player2._speed, picEn.Location.Y)
                             picEn.Location = Loc
                         End If
                     End If
 
                 Case Keys.A
                     If Not picPlayer.Location.X - 5 < 0 Then
-                        Loc = New Point(picPlayer.Location.X - 20, picPlayer.Location.Y)
+                        Loc = New Point(picPlayer.Location.X - player1._speed, picPlayer.Location.Y)
                         picPlayer.Location = Loc
                     End If
 
                 Case Keys.Right
                     If game.Equals("Multiplayer") Then
                         If Not picEn.Location.X - 5 > Me.Width - picEn.Width - 5 Then
-                            Loc = New Point(picEn.Location.X + 20, picEn.Location.Y)
+                            Loc = New Point(picEn.Location.X + player2._speed, picEn.Location.Y)
                             picEn.Location = Loc
                         End If
                     End If
 
                 Case Keys.D
                     If Not picPlayer.Location.X - 5 > Me.Width - picPlayer.Width - 5 Then
-                        Loc = New Point(picPlayer.Location.X + 20, picPlayer.Location.Y)
+                        Loc = New Point(picPlayer.Location.X + player1._speed, picPlayer.Location.Y)
                         picPlayer.Location = Loc
                     End If
 
